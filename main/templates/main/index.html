@@ -1,0 +1,29 @@
+    {% extends 'base.html' %}
+
+    {% load static %}
+
+    {% block content %}
+      <div>
+        <div class="main">
+          <div class="main__book">
+          {% for book in books %}
+            <div class="book-preview">
+                <img class="book-preview__img" src="{% static book.cover %}" alt="Название книги">
+                <div class="book-preview__name">{{ book.name }}</div>
+              <div class="spring"></div>
+              <div class="book-preview__author">{{ book.author }}</div>
+              <a href="/">Подробнее</a>
+              <div class="spring"></div>
+              <div class="book-preview-order">
+                  {% if book.is_available == True %}
+                  <div class="book-preview-order__order button">Заказать</div>
+                  {% else %}
+                  <div class="book-preview-order__order button button--disable">Нет в наличии</div>
+                  {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+{% endblock %}

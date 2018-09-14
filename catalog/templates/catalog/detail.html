@@ -1,0 +1,25 @@
+    {% load static %}
+
+    {% extends 'base.html' %}
+
+    {% block content %}
+      <div>
+        <div class="main">
+          <div class="main__book">
+            <div class="book-detail">
+              <div class="book-detail__cover book-detail-cover">
+                  <img class="book-detail-cover__img" src="{{ book.cover }}" alt="{{ book.name }}">
+              </div>
+              <div class="book-detail__content">
+                  <div class="book-detail-property">Название: <i>{{ book.name }}</i></div>
+                  <div class="book-detail-property">Название на английском: <i>{{ book.name_eng }}</i></div>
+                  <div class="book-detail-property">Автор: <i>{{ book.autor }}</i></div>
+                  <div class="book-detail-property">Количество страниц: <i>{{ book.pages }}</i></div>
+                  <div class="book-detail-property">Год выпуска: <i>{{ book.pub_year }}</i></div>
+                  <div class="book-detail-description">{{ book.description }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
